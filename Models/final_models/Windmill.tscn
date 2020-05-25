@@ -3,7 +3,7 @@
 [ext_resource path="res://Models/Meshes/Windmill.glb" type="PackedScene" id=1]
 [ext_resource path="res://Models/Materials/cloth.tres" type="Material" id=2]
 [ext_resource path="res://Models/Materials/wood.tres" type="Material" id=3]
-[ext_resource path="res://Models/Materials/stone.tres" type="Material" id=4]
+[ext_resource path="res://Models/Materials/bricks.tres" type="Material" id=4]
 [ext_resource path="res://Models/Materials/shingles.tres" type="Material" id=5]
 
 [node name="Windmill" instance=ExtResource( 1 )]

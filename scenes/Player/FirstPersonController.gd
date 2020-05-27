@@ -29,8 +29,11 @@ func _physics_process(delta):
 	
 	move_and_slide(fall, Vector3.UP)
 	
-	#if not is_on_floor():
-	#	fall.y -= gravity	
+	if not is_on_floor():
+		fall.y -= gravity
+	if is_on_floor():
+		velocity.y = 0
+		fall.y = 0
 	
 	if Input.is_action_pressed("forward"):
 	
@@ -51,4 +54,4 @@ func _physics_process(delta):
 		
 	direction = direction.normalized()
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
-	velocity = move_and_slide(velocity, Vector3.UP) 
+	velocity = move_and_slide_with_snap(velocity,Vector3.UP, Vector3.UP, true)

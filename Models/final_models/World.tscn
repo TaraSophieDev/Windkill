@@ -8,11 +8,11 @@
 [node name="World" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01374, -7.62939e-06, 0.765213 )
 
-[node name="Plateau" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1.12865, 0, 0, 0, 1.12865, 0, 0, 0, 1.12865, -1.67875, -3.8147e-06, 0.272099 )
-
 [node name="SunsetSkybox" parent="." instance=ExtResource( 3 )]
-transform = Transform( 3.98873, 0, 0, 0, 3.98873, 0, 0, 0, 3.98873, 0, 0, 0 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Plateau" parent="." instance=ExtResource( 1 )]
+transform = Transform( 7, 0, 0, 0, 1.129, 0, 0, 0, 7, -1.67875, -3.8147e-06, 0.272099 )
 
 [node name="Windmill" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39918, 19.1025, 2.02813 )

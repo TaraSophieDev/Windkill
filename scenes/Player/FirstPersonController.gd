@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 7
 var acceleration = 10
-var gravity = 0.09
+var gravity = 0.5 #0.09 standard
 var jump = 10
 
 var mouse_sensitivity = 0.05
@@ -50,6 +50,10 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		
 		direction += transform.basis.x
+	
+	if Input.is_action_just_pressed("close_game"):
+		
+		get_tree().quit()
 			
 		
 	direction = direction.normalized()

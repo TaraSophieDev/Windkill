@@ -35,6 +35,8 @@ func _physics_process(delta):
 		velocity.y = 0
 		fall.y = 0
 	
+	#Moving
+	############################################################################
 	if Input.is_action_pressed("forward"):
 	
 		direction -= transform.basis.z
@@ -58,7 +60,10 @@ func _physics_process(delta):
 	else:
 		
 		speed = 7
+		
 	
+	#Game Settings
+	############################################################################
 	if Input.is_action_just_pressed("close_game"):
 		
 		get_tree().quit() #closes game

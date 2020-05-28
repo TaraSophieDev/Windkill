@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player/FirstPersonController.gd" type="Script" id=1]
 [ext_resource path="res://Models/Textures/sunset.png" type="Texture" id=2]
+[ext_resource path="res://scenes/debug_overlay.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -11,11 +12,11 @@ height = 1.5
 radius = 0.5
 mid_height = 1.5
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=3]
 panorama = ExtResource( 2 )
 
-[sub_resource type="Environment" id=3]
-background_sky = SubResource( 4 )
+[sub_resource type="Environment" id=4]
+background_sky = SubResource( 3 )
 fog_enabled = true
 fog_depth_end = 20.0
 
@@ -35,5 +36,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01947, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-environment = SubResource( 3 )
+environment = SubResource( 4 )
 far = 8192.0
+
+[node name="debug_overlay" parent="Head" instance=ExtResource( 3 )]

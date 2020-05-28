@@ -16,9 +16,13 @@ mid_height = 1.5
 panorama = ExtResource( 2 )
 
 [sub_resource type="Environment" id=4]
+background_mode = 1
 background_sky = SubResource( 3 )
+background_color = Color( 0.501961, 0.6, 0.701961, 1 )
 fog_enabled = true
+fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
 fog_depth_end = 20.0
+fog_depth_curve = 0.297302
 
 [node name="KinematicBody" type="KinematicBody"]
 script = ExtResource( 1 )

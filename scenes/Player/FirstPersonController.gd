@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 7
+var speed = 8
 var acceleration = 10
 var gravity = 0.5 #0.09 standard
 var jump = 10
@@ -53,9 +53,9 @@ func _physics_process(delta):
 		
 		direction += transform.basis.x
 	
-	if Input.is_action_pressed("sprint"):
+	#if Input.is_action_pressed("sprint"):
 		
-		speed = 15
+	#	speed = 15
 		
 	else:
 		
@@ -67,6 +67,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("close_game"):
 		
 		get_tree().quit() #closes game
+		
+	if Input.is_action_just_pressed("reset"):
+		
+		get_tree().reload_current_scene() #resets scene
 			
 		
 	direction = direction.normalized()

@@ -9,16 +9,17 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01374, -7.62939e-06, 0.765213 )
 
 [node name="SunsetSkybox" parent="." instance=ExtResource( 3 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -0.186142, 1.90735e-06, -0.0595131 )
+visible = false
 
 [node name="Plateau" parent="." instance=ExtResource( 1 )]
 transform = Transform( 7, 0, 0, 0, 1.129, 0, 0, 0, 7, -1.67875, -3.8147e-06, 0.272099 )
 
 [node name="Windmill" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39918, 19.1025, 2.02813 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39918, 18.7455, 2.02813 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
 
 [node name="KinematicBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1778, 25.093, 13.2383 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1778, 34.9336, 13.2383 )

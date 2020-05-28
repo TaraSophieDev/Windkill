@@ -53,7 +53,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("close_game"):
 		
-		get_tree().quit()
+		get_tree().quit() #closes game
 			
 		
 	direction = direction.normalized()

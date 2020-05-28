@@ -51,6 +51,14 @@ func _physics_process(delta):
 		
 		direction += transform.basis.x
 	
+	if Input.is_action_pressed("sprint"):
+		
+		speed = 15
+		
+	else:
+		
+		speed = 7
+	
 	if Input.is_action_just_pressed("close_game"):
 		
 		get_tree().quit() #closes game

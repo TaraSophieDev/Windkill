@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/PauseMenu.gd" type="Script" id=1]
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="PauseMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PAUSED" type="Label" parent="PauseMenu/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -33.5
+margin_right = 33.5
+margin_bottom = 28.0
+text = "Paused"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Text" type="Label" parent="PauseMenu/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -44.0
+text = "Press escape to close menu"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close_Game" type="Button" parent="PauseMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -84.0
+margin_top = -68.5
+margin_right = 84.0
+margin_bottom = 68.5
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PauseMenu/Panel/Close_Game" to="PauseMenu" method="_on_Close_Game_pressed"]

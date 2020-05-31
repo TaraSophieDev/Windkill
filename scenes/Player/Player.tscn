@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Player/FirstPersonController.gd" type="Script" id=1]
 [ext_resource path="res://Models/Textures/sunset.png" type="Texture" id=2]
-[ext_resource path="res://scenes/debug_overlay.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -43,5 +42,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01947, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 environment = SubResource( 4 )
 far = 8192.0
-
-[node name="debug_overlay" parent="Head" instance=ExtResource( 3 )]

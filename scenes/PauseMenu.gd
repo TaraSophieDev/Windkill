@@ -16,11 +16,8 @@ func _process(delta):
 			get_tree().paused = false
 			notPaused = true
 			visible = false
-	
-
 
 
 func _on_Close_Game_pressed(): #Closes game with button press
 	get_tree().quit()
-
 

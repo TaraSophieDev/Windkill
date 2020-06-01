@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="2 Minute Windmill Horror Game"
 run/main_scene="res://Models/final_models/World.tscn"
 config/icon="res://Windmill_icon.png"
+config/windows_native_icon="res://Windmill_icon.ico"
 
 [display]
 

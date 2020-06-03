@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player/FirstPersonController.gd" type="Script" id=1]
 [ext_resource path="res://Models/Textures/sunset.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Player/Interaction.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -42,3 +43,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01947, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 environment = SubResource( 4 )
 far = 8192.0
+
+[node name="InteractionRayCast" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -0.0747348, -0.997203, 0, 0.997203, -0.0747348, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -3, 0 )
+collision_mask = 2
+script = ExtResource( 3 )

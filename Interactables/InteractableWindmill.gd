@@ -14,6 +14,7 @@ func get_interaction_text():
 	
 func interact():
 	on = true
+	$AudioStreamPlayer3D.play()
 
 func set_windblade_rotation_speed(delta):
 	if on:

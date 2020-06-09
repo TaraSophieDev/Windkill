@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/214682__felix-blume__windmill-mechanism-recorded-by-a-contact-microphone-new-mexico-usa.ogg-3bc462cf5d7847b48688ad9400a7a870.oggstr"
+
+[deps]
+
+source_file="res://Sounds/214682__felix-blume__windmill-mechanism-recorded-by-a-contact-microphone-new-mexico-usa.ogg"
+dest_files=[ "res://.import/214682__felix-blume__windmill-mechanism-recorded-by-a-contact-microphone-new-mexico-usa.ogg-3bc462cf5d7847b48688ad9400a7a870.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

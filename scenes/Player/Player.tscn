@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Player/FirstPersonController.gd" type="Script" id=1]
 [ext_resource path="res://Models/Textures/sunset.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player/Interaction.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/459977__florianreichelt__soft-wind.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/Player/WalkSound.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/step1.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -25,12 +28,16 @@ fog_depth_begin = 0.0
 fog_depth_end = 30.0
 fog_depth_curve = 1.41422
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
@@ -50,3 +57,9 @@ enabled = true
 cast_to = Vector3( 0, -3, 0 )
 collision_mask = 2
 script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Head"]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
+[connection signal="playerWalk" from="." to="WalkSound" method="_on_Player_playerWalk"]

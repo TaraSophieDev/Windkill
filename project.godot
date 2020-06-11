@@ -25,6 +25,14 @@ run/main_scene="res://final_models/World.tscn"
 config/icon="res://icons/Windmill_icon.png"
 config/windows_native_icon="res://icons/Windmill_icon.ico"
 
+[debug]
+
+settings/fps/force_fps=240
+
+[display]
+
+window/vsync/use_vsync=false
+
 [input]
 
 forward={
@@ -68,6 +76,11 @@ interact={
  ]
 }
 
+[physics]
+
+common/physics_jitter_fix=1.0
+
 [rendering]
 
+quality/filters/anisotropic_filter_level=1
 environment/default_environment="res://default_env.tres"

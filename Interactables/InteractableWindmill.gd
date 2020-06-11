@@ -10,7 +10,7 @@ func _process(delta):
 	set_windblade_rotation_speed(delta)
 
 func get_interaction_text():
-	return "turn on" if !on else ""
+	return "to activate" if !on else ""
 	
 func interact():
 	on = true
@@ -18,4 +18,4 @@ func interact():
 
 func set_windblade_rotation_speed(delta):
 	if on:
-		windblade_node.rotate(Vector3(0, 0, 1), delta)
+		windblade_node.rotate(Vector3(0, 0, -1), delta)

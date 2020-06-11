@@ -11,6 +11,8 @@ var direction = Vector3()
 var velocity = Vector3()
 var fall = Vector3() 
 
+signal playerWalk
+
 onready var head = $Head
 
 func _ready():
@@ -38,20 +40,20 @@ func _physics_process(delta):
 	#Moving
 	############################################################################
 	if Input.is_action_pressed("forward"):
-	
 		direction -= transform.basis.z
+		emit_signal("playerWalk")
 	
 	elif Input.is_action_pressed("backward"):
-		
 		direction += transform.basis.z
+		emit_signal("playerWalk")
 		
 	if Input.is_action_pressed("left"):
-		
-		direction -= transform.basis.x			
+		direction -= transform.basis.x
+		emit_signal("playerWalk")
 		
 	elif Input.is_action_pressed("right"):
-		
 		direction += transform.basis.x
+		emit_signal("playerWalk")
 	
 	if Input.is_action_pressed("sprint"):
 		

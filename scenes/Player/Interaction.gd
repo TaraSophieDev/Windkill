@@ -2,6 +2,8 @@ extends RayCast
 
 var current_collider
 
+signal send_count_signal
+
 onready var interaction_label = get_node("/root/World/UI/InteractionLabel")
 
 func _ready():
@@ -18,6 +20,8 @@ func _process(delta):
 		if Input.is_action_just_pressed("interact"):
 			collider.interact()
 			set_interaction_text(collider.get_interaction_text())
+			emit_signal("send_count_signal")
+			
 	elif current_collider:
 		current_collider = null
 		set_interaction_text("")

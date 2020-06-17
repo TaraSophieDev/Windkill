@@ -12,6 +12,7 @@ var velocity = Vector3()
 var fall = Vector3() 
 
 signal playerWalk
+signal send_windmill_signal
 
 onready var head = $Head
 
@@ -41,19 +42,23 @@ func _physics_process(delta):
 	############################################################################
 	if Input.is_action_pressed("forward"):
 		direction -= transform.basis.z
-		emit_signal("playerWalk")
+		if is_on_floor():
+			emit_signal("playerWalk")
 	
 	elif Input.is_action_pressed("backward"):
 		direction += transform.basis.z
-		emit_signal("playerWalk")
+		if is_on_floor():
+			emit_signal("playerWalk")
 		
 	if Input.is_action_pressed("left"):
 		direction -= transform.basis.x
-		emit_signal("playerWalk")
+		if is_on_floor():
+			emit_signal("playerWalk")
 		
 	elif Input.is_action_pressed("right"):
 		direction += transform.basis.x
-		emit_signal("playerWalk")
+		if is_on_floor():
+			emit_signal("playerWalk")
 	
 	if Input.is_action_pressed("sprint"):
 		
@@ -74,3 +79,8 @@ func _physics_process(delta):
 	direction = direction.normalized()
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
 	velocity = move_and_slide_with_snap(velocity,Vector3.UP, Vector3.UP, true)
+
+
+
+func _on_InteractionRayCast_send_count_signal():
+	emit_signal("send_windmill_signal")

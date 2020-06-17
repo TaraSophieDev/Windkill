@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Models/Meshes/Windmill.glb" type="PackedScene" id=1]
 [ext_resource path="res://Models/Materials/cloth.tres" type="Material" id=2]
@@ -7,11 +7,13 @@
 [ext_resource path="res://Models/Materials/shingles.tres" type="Material" id=5]
 [ext_resource path="res://Interactables/InteractableWindmill.gd" type="Script" id=6]
 [ext_resource path="res://Sounds/214682__felix-blume__windmill-mechanism-recorded-by-a-contact-microphone-new-mexico-usa.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Models/final_models/Windmill.gd" type="Script" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.95263, 3.60849, 3.03562 )
 
 [node name="Windmill" instance=ExtResource( 1 )]
+script = ExtResource( 8 )
 
 [node name="Windmill" parent="." index="0"]
 material/0 = ExtResource( 4 )
@@ -36,3 +38,4 @@ stream = ExtResource( 7 )
 unit_db = 10.0
 max_distance = 50.0
 bus = "Sounds"
+[connection signal="windmill_count" from="StaticBody" to="." method="windmill_count"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Models/final_models/Plateau.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/final_models/Windmill.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Models/final_models/SunsetSkybox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Other Scripts/Windmill_Count.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/Materials/easteregg.tres" type="Material" id=5]
 [ext_resource path="res://scenes/debug_overlay.tscn" type="PackedScene" id=6]
@@ -15,22 +15,21 @@
 size = 25
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 8 )
+
 [node name="World" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01374, -7.62939e-06, 0.765213 )
 
-[node name="SunsetSkybox" parent="." instance=ExtResource( 3 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -0.186142, 1.90735e-06, -0.0595131 )
-visible = false
-
 [node name="Plateau" parent="." instance=ExtResource( 1 )]
-transform = Transform( 15, 0, 0, 0, 1.129, 0, 0, 0, 15, -1.34081, -0.112242, 0.420315 )
+transform = Transform( 15, 0, 0, 0, 1.129, 0, 0, 0, 15, -1.33703, -0.185524, 0.447548 )
 
 [node name="Windmill" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2.39918, 18.7455, -30.9009 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
-light_energy = 0.35
+light_energy = 0.25
 
 [node name="KinematicBody" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1778, 20.2996, -0.429148 )
@@ -68,3 +67,17 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Windmill_Count" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -352.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+text = "Windmills activated: 0"
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="windmill_count" from="Windmill" to="UI/Windmill_Count" method="update_windmill_count"]

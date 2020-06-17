@@ -37,6 +37,7 @@ shape = SubResource( 1 )
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -2.0
 script = ExtResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -63,3 +64,4 @@ stream = ExtResource( 4 )
 volume_db = -10.0
 autoplay = true
 [connection signal="playerWalk" from="." to="WalkSound" method="_on_Player_playerWalk"]
+[connection signal="send_count_signal" from="Head/Camera/InteractionRayCast" to="." method="_on_InteractionRayCast_send_count_signal"]

@@ -9,5 +9,5 @@ func _ready():
 func update_windmill_count():
 	if(!alreadyExecuted):
 		number += 1
-		text = str("Windmill Activated: ", number)
+		text = str("Windmills Activated: ", number)
 	

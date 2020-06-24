@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Windmill Game"
-run/main_scene="res://final_models/World.tscn"
+config/name="Windkill"
+run/main_scene="res://World.tscn"
 config/icon="res://icons/Windmill_icon.png"
 config/windows_native_icon="res://icons/Windmill_icon.ico"
 

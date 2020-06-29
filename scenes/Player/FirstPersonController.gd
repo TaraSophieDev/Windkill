@@ -11,6 +11,7 @@ var direction = Vector3()
 var velocity = Vector3()
 var fall = Vector3() 
 
+
 signal playerWalk
 signal send_windmill_signal
 
@@ -34,6 +35,7 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		fall.y -= gravity
+			
 	if is_on_floor():
 		velocity.y = 0
 		fall.y = 0

@@ -1,40 +1,63 @@
 extends KinematicBody
 
 onready var anim_player = $Graphics/Monster/AnimationPlayer
+onready var eyes = $Eyes
+onready var raycast = $RayCast
 
-enum STATES {WALK, CHASE, ATTACK}
+enum {
+	WALK, 
+	CHASE, 
+	ATTACK
+}
 
-var cur_state = STATES.WALK
+var state = WALK
+var target
+var direction
+var fall = Vector3()
+var gravity = 0.5
+var velocity = Vector3()
+export var speed = 150
+
+var TURN_SPEED = -2
 
 func _ready():
-	set_state_walk()
-	
-func _process(delta):
-	match cur_state:
-		STATES.WALK:
-			process_state_walk(delta)
-		STATES.CHASE:
-			process_state_chase(delta)
-		STATES.ATTACK:
-			process_state_attack(delta)
+	pass
 
-func set_state_walk():
-	cur_state = STATES.WALK
-	anim_player.play("walk_loop")
 	
-func set_state_chase():
-	cur_state = STATES.CHASE
-	anim_player.play("walk_loop")
-	
-func set_state_attack():
-	cur_state = STATES.ATTACK
-	anim_player.play("attack")
-	
-func process_state_walk(delta):
-	pass
-	
-func process_state_chase(delta):
-	pass
-	
-func process_state_attack(delta):
-	pass
+func _body_entered(body):
+	if body.is_in_group("player"):
+		if raycast.is_colliding():
+			var attack = raycast.is_colliding()
+			if attack.is_in_group("player"):
+				print("hit")
+		else:
+			state = CHASE
+			target = body
+
+func _body_exited(body):
+	if body.is_in_group("player"):
+		state = WALK
+
+
+func _process(delta):
+	if !is_on_floor():
+		fall.y -= gravity
+	else:
+		velocity.y = 0
+		fall.y = 0
+	match state:
+		WALK:
+			anim_player.play("walk_loop")
+		CHASE:
+			anim_player.play("walk_loop")
+			eyes.look_at(target.global_transform.origin, Vector3.UP)
+			rotate_y(deg2rad(eyes.rotation.y / TURN_SPEED))
+			direction = (target.transform.origin - transform.origin).normalized()
+			move_and_slide_with_snap(direction * speed * delta, Vector3.UP)
+			
+		ATTACK:
+			anim_player.play("attack")
+
+
+
+

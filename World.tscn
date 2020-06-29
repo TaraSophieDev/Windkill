@@ -49,10 +49,10 @@ transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
 light_energy = 0.25
 
 [node name="KinematicBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.813507, 0, -0.581555, 0, 1, 0, 0.581555, 0, 0.813507, -25.7838, 20.2996, -8.23998 )
+transform = Transform( 0.813507, 0, -0.581555, 0, 1, 0, 0.581555, 0, 0.813507, -38.9095, 20.2996, -16.7077 )
 
 [node name="Monster" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0023, 18.9828, -13.4793 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0023, 18.9254, -13.4793 )
 
 [node name="Easteregg" type="MeshInstance" parent="."]
 transform = Transform( 1.44692, -0.263659, -0.00249477, 0, 0.00946169, -0.999955, 0.395507, 0.964569, 0.00912687, -28.1912, 5.60058, 96.1653 )
@@ -102,6 +102,7 @@ __meta__ = {
 }
 
 [node name="Playtest_Build" type="Label" parent="UI"]
+visible = false
 margin_top = 29.0
 margin_right = 265.0
 margin_bottom = 69.0

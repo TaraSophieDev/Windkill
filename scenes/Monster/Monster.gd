@@ -25,6 +25,13 @@ var timer = 0
 var wait_time = 5
 export var speed = 150
 
+func _num2():
+	speed = 300
+func _num3():
+	speed = 400
+func _num4():
+	speed = 500
+
 
 
 func _body_entered(body):
@@ -36,12 +43,13 @@ func _body_exited(body):
 	if body.is_in_group("player"):
 		state = WALK
 		
-func attack():
+func attack(delta):
 	if raycast.is_colliding() && target.is_in_group("player"):
 		state = ATTACK
+		timer -= delta
 
 func _process(delta):
-	timer -= delta
+	print(speed)
 	
 	move_and_slide(fall, Vector3.UP)
 	if not is_on_floor():
@@ -50,7 +58,7 @@ func _process(delta):
 		velocity.y = 0
 		fall.y = 0
 		
-	attack()
+	attack(delta)
 		
 	match state:
 		WALK:
@@ -67,17 +75,7 @@ func _process(delta):
 		ATTACK:
 			anim_player.play("attack")
 			print(timer)
-			if -1.3 > timer:
+			if -0.48 > timer:
 				anim_player.stop()
-			#if -3 > timer:
+			#if -1 > timer:
 			#	get_tree().change_scene(death_scene)
-				
-				
-
-
-
-
-
-
-
-

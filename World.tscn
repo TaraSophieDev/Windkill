@@ -118,3 +118,6 @@ __meta__ = {
 [connection signal="windmill_count" from="Windmill3" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill4" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill5" to="UI/Windmill_Count" method="update_windmill_count"]
+[connection signal="num2" from="UI/Windmill_Count" to="Monster" method="_num2"]
+[connection signal="num3" from="UI/Windmill_Count" to="Monster" method="_num3"]
+[connection signal="num4" from="UI/Windmill_Count" to="Monster" method="_num4"]

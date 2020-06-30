@@ -67,10 +67,10 @@ func _process(delta):
 		ATTACK:
 			anim_player.play("attack")
 			print(timer)
-			if -2.2 > timer:
+			if -1.3 > timer:
 				anim_player.stop()
-			if -3 > timer:
-				get_tree().change_scene(death_scene)
+			#if -3 > timer:
+			#	get_tree().change_scene(death_scene)
 				
 				
 

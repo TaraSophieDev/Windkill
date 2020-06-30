@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/Monster/Monster.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-height = 7.0
+height = 6.68833
 
 [sub_resource type="Animation" id=2]
 resource_name = "walk_loop"
@@ -96,26 +96,27 @@ tracks/11/enabled = true
 tracks/11/keys = PoolRealArray( 0, 1, 0, -4.76837e-07, -1.49012e-08, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.0666667, 1, 2.48738e-05, 0.0131698, 0.000659183, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.2, 1, 0.00025703, 0.136091, 0.00681175, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.266667, 1, 0.00021141, 0.111935, 0.00560269, 4.91279e-20, -2.32831e-10, -8.00355e-11, 1, 1, 1, 1, 0.333333, 1, 9.3393e-05, 0.049449, 0.00247508, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.4, 1, 1.10362e-05, 0.00584316, 0.000292495, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.466667, 1, 4.0751e-05, 0.0215774, 0.00108002, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.533333, 1, 0.00015622, 0.0827146, 0.00414012, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.6, 1, 0.000248767, 0.131714, 0.00659272, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.666667, 1, 0.000237729, 0.125871, 0.00630023, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.8, 1, 2.20723e-05, 0.0116873, 0.00058499, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1, 0.833333, 1, 0, -4.76837e-07, -1.49012e-08, 1.86265e-09, -1.16415e-10, -7.27596e-11, 1, 1, 1, 1 )
 
 [sub_resource type="SphereShape" id=3]
-radius = 12.974
+radius = 13.8895
 
 [node name="Monster" type="KinematicBody"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4.5, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4.60359, 0 )
 shape = SubResource( 1 )
 
 [node name="Graphics" type="Spatial" parent="."]
 
 [node name="Monster" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="Graphics/Monster" index="1"]
 anims/walk_loop = SubResource( 2 )
 
 [node name="RayCast" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31679, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 1.31679, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, 5 )
+cast_to = Vector3( 0, 0, 6 )
 
 [node name="SightRange" type="Area" parent="."]
 

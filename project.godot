@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Windkill"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Title_Screen.tscn"
 config/icon="res://icon.png"
 
 [display]

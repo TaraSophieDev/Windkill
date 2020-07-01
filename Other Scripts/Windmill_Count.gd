@@ -2,6 +2,7 @@ extends Label
 
 var number = 0
 var alreadyExecuted = false
+signal num1
 signal num2
 signal num3
 signal num4
@@ -18,6 +19,8 @@ func update_windmill_count():
 func _process(delta):
 	
 	match number:
+		1:
+			emit_signal("num1")
 		2:
 			emit_signal("num2")
 		3:

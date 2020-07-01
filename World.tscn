@@ -27,32 +27,32 @@ font_data = ExtResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01374, -7.62939e-06, 0.765213 )
 
 [node name="Plateau" parent="." instance=ExtResource( 5 )]
-transform = Transform( 15, 0, 0, 0, 1.129, 0, 0, 0, 15, -1.33703, -0.185524, 0.447548 )
+transform = Transform( 14, 0, 0, 0, 1.129, 0, 0, 0, 14, -1.50455, -0.181303, 0.263706 )
 
 [node name="Windmill" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2.39918, 18.7455, -30.9009 )
+transform = Transform( 1.76117, 0, -0.947777, 0, 2, 0, 0.947777, 0, 1.76117, 22.0161, 18.7455, -66.5297 )
 
 [node name="Windmill2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -22.9522, 18.7455, -30.9009 )
+transform = Transform( 1.36167, 0, -1.46487, 0, 2, 0, 1.46487, 0, 1.36167, 71.3307, 18.7455, -19.0066 )
 
 [node name="Windmill3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 13.9954, 18.7455, -30.9009 )
+transform = Transform( -1.95544, 0, 0.419817, 0, 2, 0, -0.419817, 0, -1.95544, -42.8717, 18.7455, 37.5143 )
 
 [node name="Windmill4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 32.0816, 18.7455, -30.9009 )
+transform = Transform( -1.91427, 0, -0.579299, 0, 2, 0, 0.579299, 0, -1.91427, 17.4069, 18.7455, 87.2476 )
 
 [node name="Windmill5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -37.5804, 18.7455, -30.9009 )
+transform = Transform( 1.64072, 0, 1.14369, 0, 2, 0, -1.14369, 0, 1.64072, -108.32, 18.7455, -53.984 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
 light_energy = 0.25
 
 [node name="KinematicBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.813507, 0, -0.581555, 0, 1, 0, 0.581555, 0, 0.813507, -38.9095, 20.2996, -16.7077 )
+transform = Transform( -0.981063, 0, 0.193686, 0, 1, 0, -0.193686, 0, -0.981063, -38.9095, 20.2996, 10.4742 )
 
 [node name="Monster" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0023, 18.9254, -13.4793 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2423, 18.9254, -13.4793 )
 
 [node name="Easteregg" type="MeshInstance" parent="."]
 transform = Transform( 1.44692, -0.263659, -0.00249477, 0, 0.00946169, -0.999955, 0.395507, 0.964569, 0.00912687, -28.1912, 5.60058, 96.1653 )
@@ -118,6 +118,7 @@ __meta__ = {
 [connection signal="windmill_count" from="Windmill3" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill4" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill5" to="UI/Windmill_Count" method="update_windmill_count"]
+[connection signal="num1" from="UI/Windmill_Count" to="Monster" method="_num1"]
 [connection signal="num2" from="UI/Windmill_Count" to="Monster" method="_num2"]
 [connection signal="num3" from="UI/Windmill_Count" to="Monster" method="_num3"]
 [connection signal="num4" from="UI/Windmill_Count" to="Monster" method="_num4"]

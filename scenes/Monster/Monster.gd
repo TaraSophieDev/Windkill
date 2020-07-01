@@ -25,12 +25,14 @@ var timer = 0
 var wait_time = 5
 export var speed = 150
 
-func _num2():
+func _num1():
 	speed = 300
-func _num3():
+func _num2():
 	speed = 400
-func _num4():
+func _num3():
 	speed = 500
+func _num4():
+	speed = 700
 
 
 
@@ -63,14 +65,14 @@ func _process(delta):
 	match state:
 		WALK:
 			anim_player.stop()
-			#print("idle")
+			print("idle")
 		CHASE:
 			anim_player.play("walk_loop")
 			eyes.look_at(target.global_transform.origin, Vector3.UP)
 			rotate_y(deg2rad(eyes.rotation.y * TURN_SPEED))
 			direction = (target.transform.origin - transform.origin).normalized()
 			move_and_slide_with_snap(direction * speed * delta, Vector3.UP)
-			#print("chase")
+			print("chase")
 			
 		ATTACK:
 			anim_player.play("attack")

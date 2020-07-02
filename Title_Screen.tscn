@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Title_Screen.gd" type="Script" id=1]
+[ext_resource path="res://Other Scripts/Title_Screen.gd" type="Script" id=1]
 [ext_resource path="res://assets/HPS1LOGOfinclear.png" type="Texture" id=2]
 [ext_resource path="res://Models/final_models/Windmill.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/itchio-logo-textless-black.png" type="Texture" id=4]
@@ -136,13 +136,13 @@ __meta__ = {
 
 [node name="Close" type="Button" parent="CanvasLayer/Control/Panel"]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.659
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -112.0
-margin_top = -247.878
-margin_right = 112.0
-margin_bottom = -161.878
+anchor_bottom = 0.659
+margin_left = -113.414
+margin_top = -43.278
+margin_right = 110.586
+margin_bottom = 42.722
 focus_mode = 1
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 7 )
@@ -155,29 +155,27 @@ __meta__ = {
 }
 
 [node name="Controls" type="RichTextLabel" parent="CanvasLayer/Control/Panel"]
-visible = false
-anchor_bottom = 1.0
-margin_left = 11.0
-margin_top = 20.0
-margin_right = 250.0
-margin_bottom = -135.0
+anchor_left = 0.0107422
+anchor_top = 0.0333333
+anchor_right = 0.244141
+anchor_bottom = 0.0833333
+margin_top = -1.90735e-06
 custom_fonts/normal_font = SubResource( 8 )
-text = "Controls:
-
-Movement = WASD
-RUN = Shift
-Interact = E
+text = "Fullscreen = F11
 "
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control/Panel"]
-anchor_bottom = 1.0
-margin_left = 832.0
-margin_top = 20.0
-margin_right = 1015.0
-margin_bottom = -135.0
+anchor_left = 0.991
+anchor_top = 0.033
+anchor_right = 0.991
+anchor_bottom = 0.033
+margin_left = -182.784
+margin_top = 0.200001
+margin_right = 0.215942
+margin_bottom = 445.2
 custom_fonts/normal_font = SubResource( 8 )
 text = "Objective:
 
@@ -190,10 +188,12 @@ __meta__ = {
 }
 
 [node name="HPS1" type="Button" parent="CanvasLayer/Control/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
 margin_left = 2.32806
-margin_top = 541.344
+margin_top = -58.656
 margin_right = 1214.33
-margin_bottom = 1747.34
+margin_bottom = 1147.34
 rect_scale = Vector2( 0.05, 0.05 )
 focus_mode = 1
 mouse_default_cursor_shape = 2
@@ -207,10 +207,14 @@ __meta__ = {
 }
 
 [node name="Twitter" type="Button" parent="CanvasLayer/Control/Panel"]
-margin_left = 63.8775
-margin_top = 548.826
-margin_right = 478.878
-margin_bottom = 965.826
+anchor_left = 0.062
+anchor_top = 1.0
+anchor_right = 0.064
+anchor_bottom = 1.0
+margin_left = 1.80371
+margin_top = -51.174
+margin_right = 414.756
+margin_bottom = 365.826
 rect_scale = Vector2( 0.11, 0.11 )
 focus_mode = 1
 mouse_default_cursor_shape = 2
@@ -224,10 +228,14 @@ __meta__ = {
 }
 
 [node name="Itch" type="Button" parent="CanvasLayer/Control/Panel"]
-margin_left = 119.636
-margin_top = 550.0
-margin_right = 1331.64
-margin_bottom = 1636.0
+anchor_left = 0.117
+anchor_top = 0.989
+anchor_right = 0.117
+anchor_bottom = 0.989
+margin_left = -0.172005
+margin_top = -43.4
+margin_right = 1211.83
+margin_bottom = 1042.6
 rect_scale = Vector2( 0.04, 0.04 )
 focus_mode = 1
 mouse_default_cursor_shape = 2

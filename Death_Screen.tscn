@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/PSXBASIC_1.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Other Scripts/Death_Screen.gd" type="Script" id=2]
+
+[sub_resource type="GradientTexture" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 1 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_right = 200.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 3 )
+text = "You died"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+anchor_left = 0.366699
+anchor_top = 0.305285
+anchor_right = 0.633301
+anchor_bottom = 0.916951
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Retry" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 81.0
+margin_right = 273.0
+margin_bottom = 122.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+enabled_focus_mode = 1
+text = "Retry"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Menu" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 162.0
+margin_right = 273.0
+margin_bottom = 203.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+enabled_focus_mode = 1
+text = "Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Close" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 243.0
+margin_right = 273.0
+margin_bottom = 284.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+enabled_focus_mode = 1
+text = "Close"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Retry" to="." method="_Retry_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Menu" to="." method="_Menu_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Close" to="." method="_Close_pressed"]

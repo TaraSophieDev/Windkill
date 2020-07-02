@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Windmill_icon.png-8911c177c663a5d3a2cc7867ddfd15d3.stex"
+path="res://.import/Windmill_icon.png-89c0a59386fe207ac1a2babad154320d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/Windmill_icon.png"
-dest_files=[ "res://.import/Windmill_icon.png-8911c177c663a5d3a2cc7867ddfd15d3.stex" ]
+source_file="res://assets/Windmill_icon.png"
+dest_files=[ "res://.import/Windmill_icon.png-89c0a59386fe207ac1a2babad154320d.stex" ]
 
 [params]
 

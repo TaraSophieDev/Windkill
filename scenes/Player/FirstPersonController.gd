@@ -75,7 +75,7 @@ func _physics_process(delta):
 	#	get_tree().quit() #closes game
 		
 	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene() #resets scene
+		get_tree().change_scene("res://Death_Screen.tscn") #resets scene
 			
 		
 	direction = direction.normalized()
@@ -86,3 +86,7 @@ func _physics_process(delta):
 
 func _on_InteractionRayCast_send_count_signal():
 	emit_signal("send_windmill_signal")
+
+
+func _FallDeath_body_entered(body):
+	get_tree().change_scene("res://Title_Screen.tscn")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Title_Screen.gd" type="Script" id=1]
+[ext_resource path="res://assets/HPS1LOGOfinclear.png" type="Texture" id=2]
 [ext_resource path="res://Models/final_models/Windmill.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/itchio-logo-textless-black.png" type="Texture" id=4]
 [ext_resource path="res://Models/final_models/Plateau.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Twitter_Social_Icon_Rounded_Square_Color.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/PSXBASIC_1.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Environment" id=1]
@@ -13,24 +16,28 @@ fog_depth_begin = 0.0
 fog_depth_end = 30.0
 fog_depth_curve = 1.41421
 
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 7 )
+[sub_resource type="Theme" id=2]
 
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
+[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="DynamicFont" id=2]
-size = 60
+[sub_resource type="DynamicFont" id=4]
+size = 50
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
 font_data = ExtResource( 7 )
 
 [node name="Title_Screen" type="Spatial"]
@@ -48,13 +55,10 @@ transform = Transform( 1, 0, 0, 0, 0.846212, -0.532847, 0, 0.532847, 0.846212, 1
 environment = SubResource( 1 )
 
 [node name="Windmill" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 83.4214, -84.5859 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.967319, 83.4214, -84.5859 )
 
 [node name="StaticBody" parent="Windmill" index="2"]
 on_by_default = true
-
-[node name="CollisionShape" parent="Windmill/StaticBody" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.42317, 0 )
 
 [node name="AudioStreamPlayer3D" parent="Windmill/StaticBody" index="1"]
 autoplay = true
@@ -72,23 +76,40 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 4 )
-custom_styles/panel = SubResource( 6 )
+margin_left = 1.05945
+margin_top = -1.05945
+margin_right = 1.05945
+margin_bottom = -1.05945
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="CanvasLayer/Control/Panel"]
 anchor_left = 0.5
-anchor_top = 0.145
 anchor_right = 0.5
-anchor_bottom = 0.145
 margin_left = -240.0
-margin_top = -29.7117
+margin_top = -1.05946
 margin_right = 240.0
-margin_bottom = 30.2883
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 69.9405
+custom_fonts/font = SubResource( 4 )
 text = "Windkill"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevName" type="Label" parent="CanvasLayer/Control/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -214.0
+margin_top = -38.0
+custom_fonts/font = SubResource( 5 )
+text = "TerraDev64"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,7 +125,7 @@ margin_right = 112.0
 margin_bottom = 43.0
 focus_mode = 1
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 action_mode = 0
 enabled_focus_mode = 1
 text = "Start"
@@ -118,10 +139,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -110.586
-margin_top = -122.769
-margin_right = 113.414
-margin_bottom = -36.7695
+margin_left = -112.0
+margin_top = -247.878
+margin_right = 112.0
+margin_bottom = -161.878
 focus_mode = 1
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 7 )
@@ -133,20 +154,95 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Panel"]
+[node name="Controls" type="RichTextLabel" parent="CanvasLayer/Control/Panel"]
+visible = false
 anchor_bottom = 1.0
-margin_left = 11.2721
+margin_left = 11.0
 margin_top = 20.0
-margin_right = 260.272
-margin_bottom = -20.0
-text = "Controlls:
+margin_right = 250.0
+margin_bottom = -135.0
+custom_fonts/normal_font = SubResource( 8 )
+text = "Controls:
 
 Movement = WASD
+RUN = Shift
+Interact = E
 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control/Panel"]
+anchor_bottom = 1.0
+margin_left = 832.0
+margin_top = 20.0
+margin_right = 1015.0
+margin_bottom = -135.0
+custom_fonts/normal_font = SubResource( 8 )
+text = "Objective:
+
+Activate all 
+5 Windmills 
+before it 
+stabs you"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPS1" type="Button" parent="CanvasLayer/Control/Panel"]
+margin_left = 2.32806
+margin_top = 541.344
+margin_right = 1214.33
+margin_bottom = 1747.34
+rect_scale = Vector2( 0.05, 0.05 )
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 7 )
+action_mode = 0
+enabled_focus_mode = 1
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Twitter" type="Button" parent="CanvasLayer/Control/Panel"]
+margin_left = 63.8775
+margin_top = 548.826
+margin_right = 478.878
+margin_bottom = 965.826
+rect_scale = Vector2( 0.11, 0.11 )
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 7 )
+action_mode = 0
+enabled_focus_mode = 1
+icon = ExtResource( 6 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Itch" type="Button" parent="CanvasLayer/Control/Panel"]
+margin_left = 119.636
+margin_top = 550.0
+margin_right = 1331.64
+margin_bottom = 1636.0
+rect_scale = Vector2( 0.04, 0.04 )
+focus_mode = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 7 )
+action_mode = 0
+enabled_focus_mode = 1
+icon = ExtResource( 4 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="CanvasLayer/Control/Panel/Start" to="." method="_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/Close" to="." method="_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/HPS1" to="." method="_HPS1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Twitter" to="." method="_Twitter_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Itch" to="." method="_Itch_pressed"]
 
 [editable path="Windmill"]

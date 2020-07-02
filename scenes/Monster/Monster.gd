@@ -11,8 +11,6 @@ enum {
 	ATTACK
 }
 
-var death_scene = "res://Death"
-
 var state = WALK
 var target
 var direction
@@ -23,18 +21,19 @@ var TURN_SPEED = 2
 var attack_bool = true
 var timer = 0
 var wait_time = 5
-export var speed = 150
+export var speed = 1
 
 func _num1():
-	speed = 300
+	speed = 350
 func _num2():
-	speed = 400
+	speed = 450
 func _num3():
 	speed = 500
 func _num4():
 	speed = 700
 
-
+func _2minTimer_timeout():
+	speed = 2000
 
 func _body_entered(body):
 	if body.is_in_group("player"):
@@ -80,4 +79,7 @@ func _process(delta):
 			if -0.48 > timer:
 				anim_player.stop()
 			#if -1 > timer:
-			#	get_tree().change_scene(death_scene)
+				get_tree().change_scene("res://Death_Screen.tscn")
+
+
+

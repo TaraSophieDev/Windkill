@@ -2,7 +2,7 @@ extends CanvasLayer
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _Retry_pressed():
 	get_tree().change_scene("res://World.tscn")

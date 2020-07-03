@@ -6,7 +6,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		if notPaused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+			#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 			get_tree().paused = true
 			notPaused = false
 			visible = true

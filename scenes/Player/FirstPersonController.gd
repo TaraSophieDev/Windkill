@@ -4,6 +4,7 @@ var speed = 8
 var acceleration = 10
 var gravity = 0.5 #0.09 standard
 var jump = 10
+var playerPos = translation
 
 var mouse_sensitivity = 0.05
 
@@ -14,6 +15,7 @@ var fall = Vector3()
 
 signal playerWalk
 signal send_windmill_signal
+signal send_playerPos
 
 onready var head = $Head
 
@@ -28,7 +30,7 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
 func _physics_process(delta):
-	
+	#print(playerPos)
 	direction = Vector3()
 	
 	move_and_slide(fall, Vector3.UP)
@@ -74,8 +76,8 @@ func _physics_process(delta):
 	#if Input.is_action_just_pressed("pause"):
 	#	get_tree().quit() #closes game
 		
-	if Input.is_action_just_pressed("reset"):
-		get_tree().change_scene("res://Death_Screen.tscn") #resets scene
+#	if Input.is_action_just_pressed("reset"):
+#		get_tree().change_scene("res://Death_Screen.tscn") #resets scene
 			
 		
 	direction = direction.normalized()
@@ -89,4 +91,4 @@ func _on_InteractionRayCast_send_count_signal():
 
 
 func _FallDeath_body_entered(body):
-	get_tree().change_scene("res://Title_Screen.tscn")
+	get_tree().change_scene("res://Death_Screen.tscn")

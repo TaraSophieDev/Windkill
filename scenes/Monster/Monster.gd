@@ -74,6 +74,8 @@ func _process(delta):
 			print("chase")
 			
 		ATTACK:
+			eyes.look_at(target.global_transform.origin, Vector3.UP)
+			rotate_y(deg2rad(eyes.rotation.y * TURN_SPEED))
 			anim_player.play("attack")
 			print(timer)
 			if -0.48 > timer:

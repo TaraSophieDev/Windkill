@@ -77,11 +77,10 @@ func _physics_process(delta):
 	
 	#Game Settings
 	############################################################################
-#	if Input.is_action_just_pressed("pause"):
-#		get_tree().quit() #closes game
-		
-	if Input.is_action_just_pressed("reset"):
-		get_tree().change_scene("res://Win_Screen.tscn") #resets scene
+#	if Input.is_action_just_pressed("reset"):
+#		get_tree().change_scene("res://Win_Screen.tscn") #resets scene
+
+
 	direction = direction.normalized()
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
 	velocity = move_and_slide_with_snap(velocity,Vector3.UP, Vector3.UP, true)

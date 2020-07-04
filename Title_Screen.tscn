@@ -42,6 +42,9 @@ font_data = ExtResource( 7 )
 
 [node name="Title_Screen" type="Spatial"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Plateau" parent="." instance=ExtResource( 5 )]
 transform = Transform( 14, 0, 0, 0, 5, 0, 0, 0, 14, 0.207, 0, -0.173 )
@@ -174,15 +177,13 @@ anchor_right = 0.991
 anchor_bottom = 0.033
 margin_left = -182.784
 margin_top = 0.200001
-margin_right = 0.215942
-margin_bottom = 445.2
+margin_right = 0.216003
+margin_bottom = 103.2
 custom_fonts/normal_font = SubResource( 8 )
 text = "Objective:
 
 Activate all 
-5 Windmills 
-before it 
-stabs you"
+5 Windmills "
 __meta__ = {
 "_edit_use_anchors_": false
 }

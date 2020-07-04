@@ -4,6 +4,8 @@ onready var anim_player = $Graphics/Monster/AnimationPlayer
 onready var eyes = $Eyes
 onready var raycast = $RayCast
 
+signal slow_Player
+
 
 enum {
 	WALK, 
@@ -24,13 +26,13 @@ var wait_time = 5
 export var speed = 1
 
 func _num1():
-	speed = 350
+	speed = 400
 func _num2():
-	speed = 450
-func _num3():
-	speed = 500
-func _num4():
 	speed = 700
+func _num3():
+	speed = 850
+func _num4():
+	speed = 1100
 
 func _2minTimer_timeout():
 	speed = 2000
@@ -44,13 +46,11 @@ func _body_exited(body):
 	if body.is_in_group("player"):
 		state = WALK
 		
-func attack(delta):
+func _process(delta):
 	if raycast.is_colliding() && target.is_in_group("player"):
+		emit_signal("slow_Player")
 		state = ATTACK
 		timer -= delta
-
-func _process(delta):
-	print(speed)
 	
 	move_and_slide(fall, Vector3.UP)
 	if not is_on_floor():
@@ -58,8 +58,6 @@ func _process(delta):
 	if is_on_floor():
 		velocity.y = 0
 		fall.y = 0
-		
-	attack(delta)
 		
 	match state:
 		WALK:
@@ -77,7 +75,7 @@ func _process(delta):
 			eyes.look_at(target.global_transform.origin, Vector3.UP)
 			rotate_y(deg2rad(eyes.rotation.y * TURN_SPEED))
 			anim_player.play("attack")
-			print(timer)
+			#print(timer)
 			if -0.48 > timer:
 				anim_player.stop()
 			#if -1 > timer:

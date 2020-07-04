@@ -5,6 +5,7 @@ var acceleration = 10
 var gravity = 0.5 #0.09 standard
 var jump = 10
 var playerPos = translation
+var sprint_disabled = false
 
 var mouse_sensitivity = 0.05
 
@@ -44,42 +45,43 @@ func _physics_process(delta):
 	
 	#Moving
 	############################################################################
-	if Input.is_action_pressed("forward"):
+	if Input.is_action_pressed("forward") && !sprint_disabled:
 		direction -= transform.basis.z
 		if is_on_floor():
 			emit_signal("playerWalk")
 	
-	elif Input.is_action_pressed("backward"):
+	elif Input.is_action_pressed("backward") && !sprint_disabled:
 		direction += transform.basis.z
 		if is_on_floor():
 			emit_signal("playerWalk")
 		
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") && !sprint_disabled:
 		direction -= transform.basis.x
 		if is_on_floor():
 			emit_signal("playerWalk")
 		
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("right") && !sprint_disabled:
 		direction += transform.basis.x
 		if is_on_floor():
 			emit_signal("playerWalk")
 	
-	if Input.is_action_pressed("sprint"):
-		
+	if Input.is_action_pressed("sprint") && !sprint_disabled:
 		speed = 15
+	elif Input.is_action_pressed("sprint") && sprint_disabled:
+		speed = 0
 	else:
 		speed = 7
+		
+		
 		
 	
 	#Game Settings
 	############################################################################
-	#if Input.is_action_just_pressed("pause"):
-	#	get_tree().quit() #closes game
+#	if Input.is_action_just_pressed("pause"):
+#		get_tree().quit() #closes game
 		
-#	if Input.is_action_just_pressed("reset"):
-#		get_tree().change_scene("res://Death_Screen.tscn") #resets scene
-			
-		
+	if Input.is_action_just_pressed("reset"):
+		get_tree().change_scene("res://Win_Screen.tscn") #resets scene
 	direction = direction.normalized()
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
 	velocity = move_and_slide_with_snap(velocity,Vector3.UP, Vector3.UP, true)
@@ -92,3 +94,8 @@ func _on_InteractionRayCast_send_count_signal():
 
 func _FallDeath_body_entered(body):
 	get_tree().change_scene("res://Death_Screen.tscn")
+	
+	
+func _slow_Player():
+	sprint_disabled = true
+	print(speed)

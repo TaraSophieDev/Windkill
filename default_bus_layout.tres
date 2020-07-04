@@ -7,7 +7,7 @@ resource_name = "PitchShift"
 resource_name = "Compressor"
 
 [resource]
-bus/0/volume_db = 3.2425
+bus/0/volume_db = 3.44026
 bus/1/name = "Sounds"
 bus/1/solo = false
 bus/1/mute = false
@@ -26,7 +26,7 @@ bus/3/name = "Stab"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -7.63485
+bus/3/volume_db = -12.9785
 bus/3/send = "Master"
 bus/3/effect/0/effect = SubResource( 2 )
 bus/3/effect/0/enabled = true

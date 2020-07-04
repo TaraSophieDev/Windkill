@@ -21,11 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Windkill"
+config/description="A game by TerraDev64"
 run/main_scene="res://Title_Screen.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/Windmill_icon.png"
+config/windows_native_icon="res://assets/Windmill_icon.ico"
 
 [display]
 
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

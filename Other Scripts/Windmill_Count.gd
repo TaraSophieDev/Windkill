@@ -1,5 +1,7 @@
 extends Label
 
+var Win_Screen = preload("res://Win_Screen.tscn")
+
 var number = 0
 var alreadyExecuted = false
 signal num1

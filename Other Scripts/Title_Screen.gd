@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var level_scene = "res://World.tscn"
+var Win_Screen = preload("res://World.tscn")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -11,7 +11,7 @@ func _process(delta):
 		OS.window_fullscreen = !OS.window_fullscreen
 
 func _start_button_pressed():
-	get_tree().change_scene(level_scene)
+	get_tree().change_scene("res://World.tscn")
 	
 func _close_button_pressed():
 	get_tree().quit()

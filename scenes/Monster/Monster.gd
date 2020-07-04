@@ -5,6 +5,7 @@ onready var eyes = $Eyes
 onready var raycast = $RayCast
 
 signal slow_Player
+signal activateStabSound
 
 
 enum {
@@ -13,17 +14,23 @@ enum {
 	ATTACK
 }
 
+var stabbed = false
 var state = WALK
 var target
 var direction
 var fall = Vector3()
 var gravity = 0.5
 var velocity = Vector3()
-var TURN_SPEED = 2
+var TURN_SPEED = 5
 var attack_bool = true
 var timer = 0
 var wait_time = 5
 export var speed = 1
+
+func playStabSound():
+	if !stabbed:
+		$Stab.play()
+		#stabbed = true
 
 func _num1():
 	speed = 400
@@ -62,20 +69,21 @@ func _process(delta):
 	match state:
 		WALK:
 			anim_player.stop()
-			print("idle")
+			#print("idle")
 		CHASE:
 			anim_player.play("walk_loop")
 			eyes.look_at(target.global_transform.origin, Vector3.UP)
 			rotate_y(deg2rad(eyes.rotation.y * TURN_SPEED))
 			direction = (target.transform.origin - transform.origin).normalized()
 			move_and_slide_with_snap(direction * speed * delta, Vector3.UP)
-			print("chase")
+			#print("chase")
 			
 		ATTACK:
 			eyes.look_at(target.global_transform.origin, Vector3.UP)
 			rotate_y(deg2rad(eyes.rotation.y * TURN_SPEED))
 			anim_player.play("attack")
 			#print(timer)
+			playStabSound()
 			if -0.48 > timer:
 				anim_player.stop()
 			#if -1 > timer:

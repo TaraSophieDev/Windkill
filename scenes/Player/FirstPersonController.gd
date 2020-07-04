@@ -7,7 +7,7 @@ var jump = 10
 var playerPos = translation
 var sprint_disabled = false
 
-var mouse_sensitivity = 0.05
+var mouse_sensitivity = 0.06
 
 var direction = Vector3()
 var velocity = Vector3()

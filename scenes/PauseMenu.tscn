@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/PSXBASIC_1.ttf" type="DynamicFontData" id=2]
@@ -15,10 +15,6 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 18
 font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="CanvasLayer"]
@@ -93,38 +89,5 @@ flat = true
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Panel"]
-visible = false
-anchor_left = 0.762695
-anchor_top = 0.055
-anchor_right = 1.0
-anchor_bottom = 0.881667
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Volume" type="Label" parent="PauseMenu/Panel"]
-visible = false
-anchor_right = 0.105469
-anchor_bottom = 0.0533333
-custom_fonts/font = SubResource( 5 )
-text = "Volume"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Mouse" type="Label" parent="PauseMenu/Panel"]
-visible = false
-anchor_top = 0.065
-anchor_right = 0.09375
-anchor_bottom = 0.118333
-custom_fonts/font = SubResource( 5 )
-text = "Mouse"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
 }
 [connection signal="pressed" from="PauseMenu/Panel/Close_Game" to="PauseMenu" method="_on_Close_Game_pressed"]

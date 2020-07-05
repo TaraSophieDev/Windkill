@@ -67,7 +67,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("sprint") && !sprint_disabled:
 		speed = 15
 	elif Input.is_action_pressed("sprint") && sprint_disabled:
-		speed = 1
+		speed = 2
 	else:
 		speed = 7
 		
@@ -96,4 +96,4 @@ func _FallDeath_body_entered(body):
 	
 func _slow_Player():
 	sprint_disabled = true
-	print(speed)
+	#print(speed)

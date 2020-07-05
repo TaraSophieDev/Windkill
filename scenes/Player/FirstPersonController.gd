@@ -65,7 +65,7 @@ func _physics_process(delta):
 			emit_signal("playerWalk")
 	
 	if Input.is_action_pressed("sprint") && !sprint_disabled:
-		speed = 15
+		speed = 14
 	elif Input.is_action_pressed("sprint") && !sprint_disabled:
 		speed = 0
 	else:

@@ -126,7 +126,7 @@ anims/walk_loop = SubResource( 2 )
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 1.31679, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, 8 )
+cast_to = Vector3( 0, 0, 7 )
 
 [node name="SightRange" type="Area" parent="."]
 

@@ -21,3 +21,10 @@ func _process(delta):
 func _on_Close_Game_pressed(): #Closes game with button press
 	get_tree().quit()
 
+
+
+func _Restart_pressed():
+	get_tree().change_scene("res://World.tscn")
+	get_tree().paused = false
+	notPaused = true
+	visible = false

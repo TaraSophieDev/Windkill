@@ -34,9 +34,9 @@ func playStabSound():
 		#stabbed = true
 
 func _num1():
-	speed = 400
+	speed = 500
 func _num2():
-	speed = 700
+	speed = 750
 func _num3():
 	speed = 850
 func _num4():

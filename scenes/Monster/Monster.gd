@@ -86,7 +86,6 @@ func _process(delta):
 			playStabSound()
 			if -0.48 > timer:
 				anim_player.stop()
-			#if -1 > timer:
 				get_tree().change_scene("res://Death_Screen.tscn")
 
 

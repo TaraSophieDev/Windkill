@@ -22,7 +22,7 @@ var direction
 var fall = Vector3()
 var gravity = 0.5
 var velocity = Vector3()
-var TURN_SPEED = 5
+var TURN_SPEED = 6
 var attack_bool = true
 var timer = 0
 var wait_time = 5

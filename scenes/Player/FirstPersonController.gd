@@ -31,7 +31,6 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
 func _physics_process(delta):
-	#print(playerPos)
 	direction = Vector3()
 	
 	move_and_slide(fall, Vector3.UP)
@@ -68,7 +67,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("sprint") && !sprint_disabled:
 		speed = 15
 	elif Input.is_action_pressed("sprint") && sprint_disabled:
-		speed = 0
+		speed = 1
 	else:
 		speed = 7
 		

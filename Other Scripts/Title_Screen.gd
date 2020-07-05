@@ -7,7 +7,7 @@ func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
 func _process(delta):
-	if Input.is_action_pressed("fullscreen"):
+	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 
 func _start_button_pressed():

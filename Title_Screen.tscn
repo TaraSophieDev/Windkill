@@ -164,7 +164,7 @@ anchor_right = 0.244141
 anchor_bottom = 0.0833333
 margin_top = -1.90735e-06
 custom_fonts/normal_font = SubResource( 8 )
-text = "Fullscreen = F11
+text = "Fullscreen = F4
 "
 __meta__ = {
 "_edit_use_anchors_": true

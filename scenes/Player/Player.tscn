@@ -8,7 +8,7 @@
 [ext_resource path="res://Sounds/step1.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.5
+radius = 0.68722
 height = 1.5
 
 [sub_resource type="CapsuleMesh" id=2]

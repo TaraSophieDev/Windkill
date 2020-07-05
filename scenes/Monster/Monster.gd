@@ -2,9 +2,10 @@ extends KinematicBody
 
 onready var anim_player = $Graphics/Monster/AnimationPlayer
 onready var eyes = $Eyes
-onready var raycast = $RayCast
+onready var attackRaycast = $AttackRayCast
+onready var stopRaycast = $StopRayCast
 
-signal slow_Player
+signal slow_player
 signal activateStabSound
 
 
@@ -54,8 +55,9 @@ func _body_exited(body):
 		state = WALK
 		
 func _process(delta):
-	if raycast.is_colliding() && target.is_in_group("player"):
-		emit_signal("slow_Player")
+	if stopRaycast.is_colliding() && target.is_in_group("player"):
+		emit_signal("slow_player")
+	if attackRaycast.is_colliding() && target.is_in_group("player"):
 		state = ATTACK
 		timer -= delta
 	

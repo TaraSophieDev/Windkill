@@ -66,8 +66,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("sprint") && !sprint_disabled:
 		speed = 15
-	elif Input.is_action_pressed("sprint") && sprint_disabled:
-		speed = 2
+	elif Input.is_action_pressed("sprint") && !sprint_disabled:
+		speed = 0
 	else:
 		speed = 7
 		
@@ -92,8 +92,7 @@ func _on_InteractionRayCast_send_count_signal():
 
 func _FallDeath_body_entered(body):
 	get_tree().change_scene("res://Death_Screen.tscn")
-	
-	
-func _slow_Player():
+
+
+func _slow_player():
 	sprint_disabled = true
-	#print(speed)

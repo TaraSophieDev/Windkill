@@ -123,10 +123,15 @@ transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 0, 0, 0
 [node name="AnimationPlayer" parent="Graphics/Monster" index="1"]
 anims/walk_loop = SubResource( 2 )
 
-[node name="RayCast" type="RayCast" parent="."]
+[node name="StopRayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -8 )
+
+[node name="AttackRayCast" type="RayCast" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 1.31679, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, 7 )
+cast_to = Vector3( 0, 0, 5 )
 
 [node name="SightRange" type="Area" parent="."]
 

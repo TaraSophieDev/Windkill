@@ -133,7 +133,7 @@ __meta__ = {
 [connection signal="windmill_count" from="Windmill3" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill4" to="UI/Windmill_Count" method="update_windmill_count"]
 [connection signal="windmill_count" from="Windmill5" to="UI/Windmill_Count" method="update_windmill_count"]
-[connection signal="slow_Player" from="Monster" to="KinematicBody" method="_slow_Player"]
+[connection signal="slow_player" from="Monster" to="KinematicBody" method="_slow_player"]
 [connection signal="body_entered" from="FallDeath" to="KinematicBody" method="_FallDeath_body_entered"]
 [connection signal="num1" from="UI/Windmill_Count" to="Monster" method="_num1"]
 [connection signal="num2" from="UI/Windmill_Count" to="Monster" method="_num2"]
